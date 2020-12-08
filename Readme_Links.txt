@@ -11,6 +11,8 @@ Blogs:
 https://github.com/ak-gee/ZenBootCamp
 4.Window Document and Screen.doc
 5.Differences between HTTP1.1 and HTTP2
+https://akgeek.medium.com/javascript-window-document-and-screen-e33319de7cf1
+Added this on 8-Dec to Medium
 
 rest countries api code in GithubTry the rest countries api below. Extract and print the flag url of all the countries in console. Use the html template. 
 
