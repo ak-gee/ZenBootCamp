@@ -25,11 +25,10 @@ var name=Asian.forEach((item,index)=>{console.log(item.name);
 
 /*Get all the countries with population of less than 2 lacs using Filter function*/
 var Below_2_lakh = data.filter(ite=>{ return ite.population<200000});
-//console.log("Population Below 2 Lakhs: " ,Below_2_lakh);//.name+" "+Below_2_lakh.population);
 
 console.log("Countries with Population Below 2 Lakhs: ");
-var op = Below_2_lakh.map(item=>{console.log(item.name+" :"+item.population)});
 
+var res = Below_2_lakh.forEach(item=>{console.log(item.name+" has :"+item.population)});
 /*Print the following details name, capital, flag using forEach function */
 
 var details = data.forEach((item,index)=>{console.log("Name: "+item.name+" ,Capital :"+item.capital+", Flag: "+item.flag);});
