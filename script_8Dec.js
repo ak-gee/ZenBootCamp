@@ -19,6 +19,9 @@ console.log(data.length);
 /*Get all the countries from Asia continent /region using Filter function */
 var Asian = data.filter(it=>{ return it.region==='Asia'});
 console.log(Asian);
+var name=Asian.forEach((item,index)=>{console.log(item.name);
+
+});
 
 /*Get all the countries with population of less than 2 lacs using Filter function*/
 var Below_2_lakh = data.filter(ite=>{ return ite.population<200000});
