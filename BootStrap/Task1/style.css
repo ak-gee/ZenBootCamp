@@ -1,0 +1,27 @@
+
+.style1{
+    background-color: rgb(252, 252, 247);
+    margin: 10px 10px 10px 10px;
+
+}
+.style2{
+ background-color: rgb(216, 206, 206);  
+}
+.style3
+{
+    height:250px;
+    color:white;
+    text-align: left;
+   margin-right: 0px;
+
+ background-color: rgb(216, 206, 206);  
+}
+.style4{
+    color:white;
+    float:right;
+}
+.topnav{
+   
+     float: right;
+    
+}
