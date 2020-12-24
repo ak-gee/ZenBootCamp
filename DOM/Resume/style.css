@@ -1,0 +1,127 @@
+.div0{
+    position:relative;     
+    margin:50px 500px 150px 500px;
+        padding:50px;
+        font-family: Arial, Helvetica, sans-serif;
+        
+
+  }
+     .div1 {
+       
+        background-color: rgb(77, 75, 75);
+        height:200px;
+        width:100%;
+        color:rgb(233, 233, 186);
+        font-size: 5em;
+        text-align: center;
+    }
+    .light{
+        background-color: rgb(158, 150, 150);
+        height:100px;
+        width:100%;   
+
+    }
+    .dark{
+        background-color: rgb(77, 75, 75);;
+        height:50px;
+        width:100%;   
+
+    }
+    .div2{
+        position:relative;
+        margin:-50px 200px 0px 100px;
+        /* padding:50px; */
+        background-color: rgb(196, 165, 81);
+        text-align:center;
+        border-radius: 30px 30px 30px 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 4em;
+    }
+    #i{
+        position: relative;
+        width: 530px;
+        height:5px;
+        margin: 0px 150px 0px 250px;
+        font-family: Arial, Helvetica, sans-serif;
+
+    }
+    .add{
+        font-size: 2em;
+        text-align: center;
+    }
+    
+    .circle {
+             
+        height: 150px;
+        width: 150px;
+        background-color: rgb(221, 180, 180);
+        margin:0px 500px;
+        border:5px dashed greenyellow;
+        border-radius: 50%;
+        bottom:10px;
+
+        }
+
+        .head{
+            font-size: 4em;
+            /* font-family: Arial, Helvetica, sans-serif; */
+            margin: 0px 50px 0px  0px;
+            left: 50px;
+        }
+
+        
+        .head1{
+            font-size: 3em;
+           
+            left: 50px;
+        }
+        .textfont{
+            font-size: 36px;;
+            text-align:left;
+            left: 50px;
+            padding:5px;
+            bottom: 20px;
+        }
+
+        .slide{
+         
+            margin:2px;
+     
+            width:50%;
+            float:right;
+            padding: 10px;
+            left: 100px;
+            bottom:20px;
+            display:block;
+        }
+        .skillname{
+            width:50%;
+            padding: 10px;
+            right: 100px;
+            float:left;
+            bottom:20px;
+
+
+        }
+     
+        section{
+            float:left;
+           
+       
+        }
+        aside{
+            float:right;
+            border-left: 4px solid rgb(63, 61, 63);
+            padding:0 0 0 50px;
+         
+        }
+ 
+        .circle-icon {
+            background-color: #ffc0c0;
+            padding:10px;
+            border-radius: 50%;
+            border: 5px dotted yellowgreen;
+            height:30px;
+            width:30px;
+        }
+        
