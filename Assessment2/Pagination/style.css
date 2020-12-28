@@ -1,0 +1,12 @@
+    table{
+        border-style:solid;
+        border-collapse:collapse;
+        border-width: 2px;
+
+    }
+      
+    .button1{
+        text-align:center;
+        
+        color: blue;
+    }
