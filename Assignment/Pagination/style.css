@@ -1,0 +1,13 @@
+    table{
+        border-style:solid;
+        border-collapse:collapse;
+        border-width: 2px;
+
+    }
+      
+    .button1{
+        text-align:center;
+        border:rgb(27, 27, 27);
+        
+        color: rgb(239, 239, 247);
+    }
