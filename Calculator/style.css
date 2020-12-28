@@ -1,0 +1,26 @@
+button{
+    width:80px;
+    height:30px;
+    font-size:10px;
+    text-align:center;
+    padding:2px;
+    border:1px;
+    border-style: 1px solid black ;
+   
+}
+.col-h{
+    height:400px;
+}
+
+.heading{
+    font-size: 3em;
+    color:blue;
+}
+.result{
+text-align: right;
+color: white;
+}
+.entry{
+    width:800px;
+
+}
