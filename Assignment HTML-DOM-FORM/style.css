@@ -1,0 +1,109 @@
+
+body{
+    font-family:fantasy;
+}
+label{
+    width : 400px;
+}
+table {
+    border-style:solid;
+    border-collapse:collapse;
+    border-width: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    width : 200px;
+ 
+}
+.center{
+    margin-left: auto;
+    margin-right :auto;
+}
+tr,td{
+    border-style:solid;
+    border-collapse:collapse;
+    border-width: 1px;
+    width : 200px;
+}
+th{
+    border-style:solid;
+    border-collapse:collapse;
+    border-width: 1px;
+    background-color: rgb(63, 61, 61);
+    color:white;
+    width : 200px;
+}
+.button{
+    margin-left: 600px;
+    margin-right :auto;
+    height : 100px;
+    text-align: center;
+    font-size: 6rem;
+}
+section{
+    float:left;
+}
+aside{
+    float:right;
+}
+.style1{
+    background-color: rgb(224, 156, 210)
+
+}
+.style4{
+    background-color: rgb(197, 34, 165)
+
+}
+.style2{
+
+ background-color: rgb(231, 125, 205);  
+ text-align: center;
+ height: 4rem;
+
+}
+.style3 {
+    color:rgb(0, 0, 0);
+    width:100%; 
+    background-color: rgb(250, 244, 248); 
+    font-size: 2rem; 
+    font-family: sans-serif;
+}
+.label_style{
+    width:400px;
+    color :black;
+}
+.input_style{
+    width : 500px;
+    overflow: hidden;
+    border-style: ridge;
+}
+.radio_style{
+    width : 100px;
+    overflow: hidden;
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; 
+  }
+  
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: visible;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
