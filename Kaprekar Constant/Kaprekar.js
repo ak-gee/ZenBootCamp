@@ -187,6 +187,11 @@ var idData = ['Iteration','Number','Smallest(Ascending)','Largest(Descending)','
     }
 
     function check(enter){
+         var not = [1111,2222,3333,4444,5555,6666,7777,8888,9999,0000];
+        if (not.includes(enter)){
+            alert("Enter number whose digits are not all the same")
+            return;
+        }
         if (enter === 6174){
             
             iter = true;
@@ -222,7 +227,7 @@ var idData = ['Iteration','Number','Smallest(Ascending)','Largest(Descending)','
   }
 function ClearTable()
 {
-         
+        answer = 0 
         var x = document.getElementById("table").rows.length; 
         if (x>=2)
         {
@@ -233,4 +238,5 @@ function ClearTable()
            
        }
        document.getElementById('number').value = ''
+      document.getElementById('outputcount').innerHTML = `Kaprekar's Constant is reached in ${answer} iterations`/*${count} iterations*/
 }
