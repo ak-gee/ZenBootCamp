@@ -6,8 +6,17 @@ async function sendAPIRequest(searchText){
     let response = await fetch(`https://api.edamam.com/search?app_id=${API_ID}&app_key=${API_KEY}&q=${searchText}`);
     console.log(response)
     let data = await response.json()
-    console.log(data)
-    readAPIData(data)
+    console.log(data,data.count)
+    // alert(data.count)
+    if (data.count ===0)
+    {
+       alert('No results found')
+    }
+     else
+     { 
+   
+        readAPIData(data)
+     }
 }
 
 
@@ -19,8 +28,18 @@ id1.addEventListener("click",() =>{
     if(txt==='')
     alert("Enter name of recipe to search")
     else
-   
-    sendAPIRequest(txt)
+    {
+        var myobj = document.getElementById("contain");
+       if (myobj !== null) myobj.remove(); 
+    
+       var node= document.getElementById("cardDeck1");
+       if (node!== null)
+       {
+       node.querySelectorAll('*').forEach(n => n.remove());
+       }
+      
+        sendAPIRequest(txt)
+    }
 })
  /*Function to Create New element*/
  function make_new(element, className, id,value) {
@@ -40,90 +59,95 @@ id1.addEventListener("click",() =>{
     var btn = [],node=[],list=[];
 
 function createBase(){
-     contain = make_new('div','container-fluid','','')
+     contain = make_new('div','container-fluid','contain','')
     document.body.append(contain)
 
 
-     cardDeck1 = make_new('div','card-deck','','');
+   
+     cardDeck1 = make_new('div','card-deck','cardDeck1','');
     
     contain.append(cardDeck1);
+    
 }
    
 function createCardDeck(data,n){   
  
- 
-    card[n] =  make_new('div','card','','')
-    img[n] = document.createElement('img');    // Create an <img> element.
-    img[n].classList.add('card-img-top');
-    img[n].src = `${data.hits[n].recipe.image}`; 
-    cardbody[n] =  make_new('div','card-body','','')
-    cardtext[n] =  make_new('p','card-text','','')
-    cardfoot[n] = make_new('div','card-footer','','')
-
-    h5[n] =  make_new('div','card-title','','')
-    h5[n].innerText = `${data.hits[n].recipe.label}`
-    src[n] = make_new('div','card-text','','') 
-    src[n].innerText = `Source: ${data.hits[n].recipe.source}`
-    var cal = data.hits[n].recipe.calories.toFixed(2)
-    var mg = data.hits[n].recipe.totalNutrients.MG.quantity.toFixed(2)
-    var ca = data.hits[n].recipe.totalNutrients.CA.quantity.toFixed(2)
-    var k = data.hits[n].recipe.totalNutrients.K.quantity.toFixed(2)
-    var p = data.hits[n].recipe.totalNutrients.P.quantity.toFixed(2)
-    var fe = data.hits[n].recipe.totalNutrients.FE.quantity.toFixed(2)
+    
    
-    src[n].innerHTML = `Tag: ${data.hits[n].recipe.healthLabels}<br>
-                        Source: ${data.hits[n].recipe.source}<br>
-                        Calories:${cal} <br>                   
-                        Nutrients in mg:<br>
-                        Calcium ${ca} ,  Potassium ${k}, Magnesium ${mg},Phospohorus ${p}  and Iron ${fe}<br>` 
-                       
-                       
-    cardDeck1.append(card[n]);
-    card[n].append(img[n])
-    card[n].append(cardbody[n])
-    cardbody[n].append(h5[n])
-    cardbody[n].append(src[n])
-    cardbody[n].append(cardtext[n])
-    a1 =  document.createElement('a');
-    cardbody[n].append(a1)
-    a1.setAttribute('target','__blank')
-    a1.href = `${data.hits[n].recipe.url}`;
-    a1.innerText="Recipe"
 
        
-    node[n] = document.createTextNode(`Ingredients: ${data.hits[n].recipe.ingredientLines}`);
+        card[n] =  make_new('div','card','','')
+        img[n] = document.createElement('img');    // Create an <img> element.
+        img[n].classList.add('card-img-top');
+        img[n].src = `${data.hits[n].recipe.image}`; 
+        cardbody[n] =  make_new('div','card-body','','')
+        cardtext[n] =  make_new('p','card-text','','')
+        cardfoot[n] = make_new('div','card-footer','','')
 
-    cardbody[n].append(cardfoot[n]);
- 
-
- 
-    btn[n] =  make_new('button','btn-primary','','Ingredients')
-     cardfoot[n].append(btn[n])
- 
-    btn[n].addEventListener("click",function(){
+        h5[n] =  make_new('div','card-title','','')
+        h5[n].innerText = `${data.hits[n].recipe.label}`
+        src[n] = make_new('div','card-text','','') 
+        src[n].innerText = `Source: ${data.hits[n].recipe.source}`
+        var cal = data.hits[n].recipe.calories.toFixed(2)
+        var mg = data.hits[n].recipe.totalNutrients.MG.quantity.toFixed(2)
+        var ca = data.hits[n].recipe.totalNutrients.CA.quantity.toFixed(2)
+        var k = data.hits[n].recipe.totalNutrients.K.quantity.toFixed(2)
+        var p = data.hits[n].recipe.totalNutrients.P.quantity.toFixed(2)
+        var fe = data.hits[n].recipe.totalNutrients.FE.quantity.toFixed(2)
     
-        list[n] = `${data.hits[n].recipe.ingredientLines}`.split(',')//.join('\n')
-        console.log(list[n][0],list[n][1],list[n].length)
-    
+        src[n].innerHTML = `Tag: ${data.hits[n].recipe.healthLabels}<br>
+                            Source: ${data.hits[n].recipe.source}<br>
+                            Calories:${cal} <br>                   
+                            Nutrients in mg:<br>
+                            Calcium ${ca} ,  Potassium ${k}, Magnesium ${mg},Phospohorus ${p}  and Iron ${fe}<br>` 
+                        
+                        
+        cardDeck1.append(card[n]);
+        card[n].append(img[n])
+        card[n].append(cardbody[n])
+        cardbody[n].append(h5[n])
+        cardbody[n].append(src[n])
+        cardbody[n].append(cardtext[n])
+        a1 =  document.createElement('a');
+        cardbody[n].append(a1)
+        a1.setAttribute('target','__blank')
+        a1.href = `${data.hits[n].recipe.url}`;
+        a1.innerText="Recipe"
 
-       var l1 = [];
-        var ul = document.createElement('ul')
-        cardfoot[n].append(ul);
-         for (let no = 0;no<list[n].length;no++)
-         {
-            l1[no] = document.createElement('li')
-            ul.append(l1[no]);
-            
-            var textnode = document.createTextNode(list[n][no]); 
-            // l1.style.listStyle = "None";
-            l1[no].style.fontSize = "18px";
-            l1[no].appendChild(textnode)
-        }
         
- 
-    })
+        node[n] = document.createTextNode(`Ingredients: ${data.hits[n].recipe.ingredientLines}`);
 
+        cardbody[n].append(cardfoot[n]);
+    
 
+    
+        btn[n] =  make_new('button','btn-primary','','Ingredients')
+        cardfoot[n].append(btn[n])
+    
+        btn[n].addEventListener("click",function(){
+        
+            list[n] = `${data.hits[n].recipe.ingredientLines}`.split(',')//.join('\n')
+            console.log(list[n][0],list[n][1],list[n].length)
+        
+
+        var l1 = [];
+            var ul = document.createElement('ul')
+            cardfoot[n].append(ul);
+            for (let no = 0;no<list[n].length;no++)
+            {
+                l1[no] = document.createElement('li')
+                ul.append(l1[no]);
+                
+                var textnode = document.createTextNode(list[n][no]); 
+                // l1.style.listStyle = "None";
+                l1[no].style.fontSize = "18px";
+                l1[no].appendChild(textnode)
+            }
+            
+    
+        })
+
+     
 
 }
 
@@ -136,10 +160,10 @@ function readAPIData(data){
 
     createCardDeck(data,1)
 
-    createBase()
+    // createBase()
 
     createCardDeck(data,2)
-    createCardDeck(data,3)
+    // createCardDeck(data,3)
 /*Card decks */
 /*
     createBase()
