@@ -32,8 +32,11 @@ function make_new(element, className, id,value) {
  
       
     card[n] =  make_new('div','card','','')
+    card[n].classList.add('mt-5');
     img[n] = document.createElement('img');    // Create an <img> element.
     img[n].classList.add('card-img-top');
+    img[n].classList.add('img-fluid');
+
     img[n].src = data[n].flag; 
     cardbody[n] =  make_new('div','card-body','','')
     cardtext[n] =  make_new('p','card-text','','')
@@ -70,8 +73,7 @@ function make_new(element, className, id,value) {
     l3.style.fontSize = "0.6rem";
     l3.appendChild(textnode)
 
-
-        
+     
     }
 
     
