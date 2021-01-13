@@ -1,7 +1,14 @@
+body{
+  font-family: 'Fraunces', serif;
+  font-weight: 800;
+  
+}
+
 .input-group{
     margin-top:50px;
     margin-bottom:50px;
 }
+
 .carousel-item{
     height: 400px;
 }
@@ -26,11 +33,7 @@
 .card-img-top{
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    width : 20px;
-    height : 20px;
-
+    
 
 }
 .btn{
@@ -49,7 +52,8 @@
 
 }
 .card-title,.card-text,.btn,.src{
-    font-size: 0.8rem;
+    /* font-size: 65%; */
+    font-size:2vw;
     text-align: center;
 }
 .card-footer{
