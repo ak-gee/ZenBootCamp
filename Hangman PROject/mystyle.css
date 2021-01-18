@@ -1,0 +1,147 @@
+.hd,header,#he1{
+    font-size: 2rem;
+    height: 50px;
+    width: 100%;
+    background-color: rgb(229, 157, 163);
+    text-align: center;
+    color:white;
+  
+
+}
+#he1{
+    font-size: 1rem;
+}
+.wrapper1{
+    text-align:center;
+    /* left: 50%; */
+    /* top:50%; */
+}
+.wrapper2{
+    float: left;
+    text-align:center;
+     top:50%;
+    width:45%;
+    height : 35rem;
+    border: 2px solid rgb(78, 78, 80);
+    margin-top:20px;
+    margin-left:10px;
+}
+.wrapper3{
+    width:45%;
+    height : 35rem;
+    text-align:center;
+     margin-right:10px; 
+    margin-top:20px;
+    border: 2px solid  rgb(78, 78, 80);
+    float: right;
+     top:50%;
+
+}
+#hint{
+    color:green;
+    font-size: 1rem;
+}
+.text{
+    /* position:relative; */
+    margin-top:20px;
+     width:220px;
+  
+}
+ 
+.alphabetBtns{
+    position:absolute;
+    height: 20px;
+    text-align: center;       
+    margin-top:20px;
+    max-Width: 900px;
+
+
+}
+.letter{
+    float:left;
+    text-align: center;
+    list-style:none;
+    margin : 0 10px 10px 0;
+    width:30px;
+    height:35px;
+    background-color: rgb(201, 134, 197);
+    border:0.5px solid rgb(250, 248, 248);
+    border-radius:50%;
+    cursor:pointer;
+
+    /* &:hover{
+        /* @include transition; */
+        background:$white;
+        border: solid 1px white;
+        color:white;
+      } */
+}
+#btn1,#btn2,#clr,#sub{
+    /* background-color: black;
+    color:white; */
+}
+.button{
+    position:absolute;
+    height: 50px;
+    text-align: center;    
+    left:50%;
+    right:auto; 
+    margin-top:50px;
+    background-color: black;
+    color:white;
+}
+.section{
+    position:relative;
+    text-align: center;
+    /* float:left; */
+}
+
+.btn-primary{
+    background-color:  rgb(201, 134, 197);
+}
+.left{
+    position:relative;
+    margin-top:50px;
+    margin-left:20px;
+    margin-right:20px;
+    float:left;
+    background-color: rgb(185, 185, 238);
+    height :480px;/*400px;*/
+    width: 480px;
+}
+
+.canvasholder{
+    position:relative;
+    float:right;
+ margin-top:50px;
+ margin-left:20px;
+ margin-right:20px;
+ width :480px;/*30rem;/*200 ;*/
+ height : 480px;/* 30rem;/*150;*/
+ /* left:40%; */
+ /* right:auto;  */
+ border-color: blueviolet;
+ background-color: rgb(143, 141, 145);
+}
+#output{
+    width :220px;/*30rem;200 ;*/
+    background-color: rgb(138, 134, 132);
+    color: rgb(253, 249, 249);
+    text-align: center;
+}
+
+#canvas,#canvas1,.canvas{
+    float:right;
+    width :480px;/*30rem;200 ;*/
+    height : 400px;/* 30rem;/*150;*/
+    width:100%;/*45%;*/
+    
+    text-align:center;
+     /* margin-right:10px; */
+    margin-top:40px; 
+    /* border: 0.1px solid  rgb(78, 78, 80); */
+    float: right;
+     top:50%;
+     background-color: rgb(216, 228, 189);
+
+}
