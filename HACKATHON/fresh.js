@@ -14,7 +14,7 @@ var url =  "https://" + FD_ENDPOINT + ".freshdesk.com"+ PATH;
 // url= `https://newaccount161108.freshdesk.com/api/v2/tickets/
 //${API_KEY}:XsendImmediately:true`
 
- url = 'https://newaccount161108.freshdesk.com/api/v2/tickets';
+ url = 'https://newaccount1611087277669.freshdesk.com/api/v2/tickets';
 let username = API_KEY;
 let password = 'X';
 let imm = true;
@@ -49,15 +49,17 @@ function parseJSON(response) {
 return response.json()
 }
 
-// fetch('https://newaccount161108.freshdesk.com/api/v2/tickets', {
-//   method: "POST",
-//   body: JSON.stringify(body),
-//   headers: {"Content-type": "application/json; charset=UTF-8"}//application/json
-// })
-// .then(response => response.json()) 
-// .then(json => console.log(json))
-// .catch(err => console.log(err));
+
+fetch('https://newaccount1611087277669.freshdesk.com/api/v2/tickets', {
+  method: "POST",
+  body: JSON.stringify(body),
+  headers: {"Content-type": "application/json; charset=UTF-8"}//application/json
+})
+.then(response => response.json()) 
+.then(json => console.log(json))
+.catch(err => console.log(err));
  
+
 
 // Request.auth({
 //   user: API_KEY,
