@@ -1,0 +1,7 @@
+ The search button ,New Ticket and ALL tickets buttons are working.
+ The Update and Delete are not working as it returns 405 message saying Im not allowed to use PUT and DELETE methods
+ 
+ In the netlify app it isn't fetching the data. Although on my machine, I'm able to see the data using search button.
+I have uploaded the code nevertheless.I have attached a screenshot in the github url to show how the tickets data is displayed at my end on my PC.
+
+
