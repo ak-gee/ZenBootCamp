@@ -1,22 +1,30 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 <!-- <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script> -->
+
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <style>
     App{
         text-align:center;
     }
-      
-  table{
+   i,#icon{
+     height:20px;
+     width:20px;
+     font-size: 20px;
+     text-align: center;
+   }   
+  table,td,th{
     width: 30%;
-    border: 2px soild black;
+    border: 2px solid rgb(141, 139, 139);
     border-collapse: collapse;
     text-align: center;
   }
@@ -25,15 +33,22 @@
   }
   img{
     text-align: center;
-    margin-left: auto;
-    margin-right:auto;
+    left: 50%;
+    margin-left:auto;
+    width :50;
+    height: 50;
+  }
+  #img1{
+    background-color: gray;
   }
 </style>
 <body>
     <div id="root"></div>
     <div id="root1"></div>
+    <div id="root2"></div>
     <script type="text/babel">
     console.log(React)
+  
    
 function Header(props){
     return <h2><b>{props.name}</b></h2>;
@@ -47,25 +62,33 @@ function Listing(props){
 function Para(props){
   return <p>{props.value}</p>
 }
-function Img(props){
-  return <img>{props.src}</img>
-  // <Img src="./dummypic.png" />
+function Imag(props){
+  return <img src={props.src} id="img1"></img>
      
 }
+function Icon(props){
+    return <i id = "icon" className ={props.src}></i>;
+}
+// 
 function App() {
     return (
       <div className="App">
-
-        <img src='./dummypic.jpg' width="100" height="100" />
+       
+        <Imag src='./dummypic.jpg' />
         
        
         <Header1 name="Resume" />
+     
+    <Icon src="fa fa-user fa-x"/>
+
         <Header name="About" />
          <ul>
           <Listing value = "Motivated result-oriented smart working professional" />
           <Listing value = "Strong analytical skills and ability to resolve issues" />
           <Listing value = "Excellent oral and written communication and interpersonal skills" />
         </ul>
+        <Icon src="fa fa-flask fa-x"/>
+    
         <Header name="Skills" />
          
         <ul>
@@ -77,6 +100,7 @@ function App() {
           <Listing value = "MongoDB" />
           <Listing value = "Version Control VSS, PVCS" />
         </ul>
+        <Icon src="fa fa-briefcase fa-x" name = "Work Experience"/>
         <Header name="Work Experience" />
         <Para value="There is only one thing that a philosopher can be relied
 upon to do and that is to contradict other philosophers
@@ -88,11 +112,14 @@ greatness thrust upon them. William Shakespeare."/>
     
     );
   }
-  var ed = [{edu :'SSLC',marks: '95%'},{edu:'PUC',marks:'92.33%'},{edu:'BE',marks:'76%'}]
+  var ed = [{edu :'SSLC',marks: '95%'},{edu:'PUC',marks:'90.5%'},{edu:'BE',marks:'76%'}]
   const TabHead = ({value}) => <th>{value}</th>
   const TabBody = ({value}) => <td>{value}</td>
   const Education = () => (
-    <table>
+     <div>
+    <Icon src="fa fa-graduation-cap fa-x" /> <Header name="Education" />
+   
+    <table>   
       <thead>
       <tr>
         <TabHead value ="Level" />
@@ -122,7 +149,9 @@ greatness thrust upon them. William Shakespeare."/>
     </tbody>
   
     </table>
+  </div>
   );
+  
   ReactDOM.render(
 <App />,
 document.getElementById('root')
@@ -130,6 +159,11 @@ document.getElementById('root')
 ReactDOM.render(
 <Education />,
 document.getElementById('root1')
+);
+React.createElement('table', {id:'Tab2'}, 'List one');
+ReactDOM.render(
+<Tab2 />,
+document.getElementById('root2')
 );
 </script>
    
