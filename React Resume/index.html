@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<!-- <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script> -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<style>
+    App{
+        text-align:center;
+    }
+      
+  table{
+    width: 30%;
+    border: 2px soild black;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  tr{
+    border: 2px soild black;
+  }
+  img{
+    text-align: center;
+    margin-left: auto;
+    margin-right:auto;
+  }
+</style>
+<body>
+    <div id="root"></div>
+    <div id="root1"></div>
+    <script type="text/babel">
+    console.log(React)
+   
+function Header(props){
+    return <h2><b>{props.name}</b></h2>;
+}
+function Header1(props){
+    return <h1><b>{props.name}</b></h1>;
+}
+function Listing(props){
+  return <li>{props.value}</li>
+}
+function Para(props){
+  return <p>{props.value}</p>
+}
+function Img(props){
+  return <img>{props.src}</img>
+  // <Img src="./dummypic.png" />
+     
+}
+function App() {
+    return (
+      <div className="App">
+
+        <img src='./dummypic.jpg' width="100" height="100" />
+        
+       
+        <Header1 name="Resume" />
+        <Header name="About" />
+         <ul>
+          <Listing value = "Motivated result-oriented smart working professional" />
+          <Listing value = "Strong analytical skills and ability to resolve issues" />
+          <Listing value = "Excellent oral and written communication and interpersonal skills" />
+        </ul>
+        <Header name="Skills" />
+         
+        <ul>
+          <Listing value = "Project Management, SDLC,Agile Methodologies" />
+          <Listing value = "Javascript" />
+          <Listing value = "HTML CSS DOM" />
+          <Listing value = "MongoDB" />
+          <Listing value = "C, MATLAB, LABWindows, LABView" />
+          <Listing value = "MongoDB" />
+          <Listing value = "Version Control VSS, PVCS" />
+        </ul>
+        <Header name="Work Experience" />
+        <Para value="There is only one thing that a philosopher can be relied
+upon to do and that is to contradict other philosophers
+William James."/>
+<Para value= "Some are born great,some achieve greatness and some have
+greatness thrust upon them. William Shakespeare."/> 
+  
+      </div>
+    
+    );
+  }
+  var ed = [{edu :'SSLC',marks: '95%'},{edu:'PUC',marks:'92.33%'},{edu:'BE',marks:'76%'}]
+  const TabHead = ({value}) => <th>{value}</th>
+  const TabBody = ({value}) => <td>{value}</td>
+  const Education = () => (
+    <table>
+      <thead>
+      <tr>
+        <TabHead value ="Level" />
+        <TabHead value ="Percentage" />      
+    
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+   
+     <TabBody value = {ed[0].edu} />
+      <TabBody value = {ed[0].marks}/>
+  
+   </tr>
+   <tr>
+   
+   <TabBody value = {ed[1].edu} />
+    <TabBody value = {ed[1].marks}/>
+
+ </tr>
+ <tr>
+   
+   <TabBody value = {ed[2].edu} />
+    <TabBody value = {ed[2].marks}/>
+
+ </tr>
+    </tbody>
+  
+    </table>
+  );
+  ReactDOM.render(
+<App />,
+document.getElementById('root')
+);
+ReactDOM.render(
+<Education />,
+document.getElementById('root1')
+);
+</script>
+   
+</body>
+</html>
