@@ -2,169 +2,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-<!-- <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script> -->
-
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-</head>
-<style>
-    App{
-        text-align:center;
-    }
-   i,#icon{
-     height:20px;
-     width:20px;
-     font-size: 20px;
-     text-align: center;
-   }   
-  table,td,th{
-    width: 30%;
-    border: 2px solid rgb(141, 139, 139);
-    border-collapse: collapse;
-    text-align: center;
-  }
-  tr{
-    border: 2px soild black;
-  }
-  img{
-    text-align: center;
-    left: 50%;
-    margin-left:auto;
-    width :50;
-    height: 50;
-  }
-  #img1{
-    background-color: gray;
-  }
-</style>
-<body>
-    <div id="root"></div>
-    <div id="root1"></div>
-    <div id="root2"></div>
-    <script type="text/babel">
-    console.log(React)
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
-   
-function Header(props){
-    return <h2><b>{props.name}</b></h2>;
-}
-function Header1(props){
-    return <h1><b>{props.name}</b></h1>;
-}
-function Listing(props){
-  return <li>{props.value}</li>
-}
-function Para(props){
-  return <p>{props.value}</p>
-}
-function Imag(props){
-  return <img src={props.src} id="img1"></img>
-     
-}
-function Icon(props){
-    return <i id = "icon" className ={props.src}></i>;
-}
-// 
-function App() {
-    return (
-      <div className="App">
-       
-        <Imag src='./dummypic.jpg' />
-        
-       
-        <Header1 name="Resume" />
-     
-    <Icon src="fa fa-user fa-x"/>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 
+
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+ 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel">   
+
+  const Header=({name}) => <h3 className="subheader">{name}</h3>;
+  const Headerbig = ({name}) => <h2 className="header" >{name}</h2>;
+  const Listing = ({group,value}) => <li><b style={{color:'#576353'}}>{group}</b> {value}</li>
+
+  function Para(props){
+    return <details><summary>{props.sl}</summary><p>{props.value}</p></details>
+  }
+  function Imag(props){
+    return <img src={props.src} className="img-fluid" id="img1"></img>
+      
+  }
+  function Icon(props){
+      return <i id = "icon" className ={props.src} style={{float: "left"}}></i>;
+  }
+  const ed = [
+      {edu :'SSLC',marks: '95%',inst:"School",year:'2020'},
+      {edu:'PUC',marks:'90.5%',inst:"College of Arts Science and Commerce",year:'2022'},
+      {edu:'BE',marks:'76%',inst:"IofT",year:'2026'}
+    ]
+  const About = () => (<div className = "container-fluid">
+    <Icon src="fa fa-user fa-x"/>
         <Header name="About" />
          <ul>
-          <Listing value = "Motivated result-oriented smart working professional" />
-          <Listing value = "Strong analytical skills and ability to resolve issues" />
-          <Listing value = "Excellent oral and written communication and interpersonal skills" />
+          <Listing group= "" value = "Motivated result-oriented smart working professional" />
+          <Listing group= "" value = "Strong analytical skills and ability to resolve issues" />
+          <Listing group= "" value = "Excellent oral and written communication and interpersonal skills" />
         </ul>
-        <Icon src="fa fa-flask fa-x"/>
-    
+        </div>
+  )
+  function Skills(){
+    return(
+    <div className="container-fluid">
+        <Icon src="fa fa-flask fa-x"/>    
         <Header name="Skills" />
          
         <ul>
-          <Listing value = "Project Management, SDLC,Agile Methodologies" />
-          <Listing value = "Javascript" />
-          <Listing value = "HTML CSS DOM" />
-          <Listing value = "MongoDB" />
-          <Listing value = "C, MATLAB, LABWindows, LABView" />
-          <Listing value = "MongoDB" />
-          <Listing value = "Version Control VSS, PVCS" />
+          <Listing group="Functional Skills:" value = "Project Management, SDLC,Agile Methodologies" />
+          <Listing group="Programming Langauges:" value = "Javascript,C, MATLAB, LABWindows, LABView" />
+          <Listing  group="Web Technologies:" value = "HTML,CSS,DOM" />
+          <Listing  group="Database:" value = "MongoDB" />
+           <Listing group="Version Control:" value = "VSS, PVCS" />
         </ul>
-        <Icon src="fa fa-briefcase fa-x" name = "Work Experience"/>
-        <Header name="Work Experience" />
-        <Para value="There is only one thing that a philosopher can be relied
-upon to do and that is to contradict other philosophers
-William James."/>
-<Para value= "Some are born great,some achieve greatness and some have
-greatness thrust upon them. William Shakespeare."/> 
+    </div>
+    )
+  }
+
+function App() {
+    return (
+      <div className="mt-2 mb-2">
+      
+        <Headerbig  name="Resume" />
+        <Headerbig  name="Anupama K" />
+        <Imag src='./dummypic.jpg' />
+        <br></br>    <br></br>  <br></br>   
+        <About />           
+        <Education/>
+        <Skills/>
+        <WorkExperience />     
   
       </div>
     
     );
   }
-  var ed = [{edu :'SSLC',marks: '95%'},{edu:'PUC',marks:'90.5%'},{edu:'BE',marks:'76%'}]
+  function WorkExperience(){
+    return(
+      <div className='container-fluid'>
+      <Icon src="fa fa-briefcase fa-x" />
+      <Header name="   Work Experience" />
+      <Para sl="HTML" value="PAN Card Form"/>
+      <Para sl='CSS' value= "Recipes using APIs"/> 
+      <Para sl='JavaScript,HTML,CSS,Bootstrap' value= "Hangman Game"/> 
+      <Para sl='C,LAbVIEW,LabWindows' value= "Multiple projects"/> 
+      <Para sl='Microporcessors and DSPs' value= "Multiple projects"/> 
+      </div>
+    )
+  }
+
   const TabHead = ({value}) => <th>{value}</th>
   const TabBody = ({value}) => <td>{value}</td>
+
   const Education = () => (
-     <div>
-    <Icon src="fa fa-graduation-cap fa-x" /> <Header name="Education" />
+     <div className="container-fluid">
+    <Icon src="fa fa-graduation-cap fa-x" /> <Header name="   Education" />
    
-    <table>   
+    <table  className="table table-hover text-dark table-active table-bordered">   
       <thead>
       <tr>
         <TabHead value ="Level" />
-        <TabHead value ="Percentage" />      
+        
+        <TabHead value ="Institution" />   
+        <TabHead value ="Year" />  
+        <TabHead value ="Percentage" />        
     
-    </tr>
-  </thead>
-  <tbody>
+      </tr>
+    </thead>
+    <tbody>
     <tr>
    
      <TabBody value = {ed[0].edu} />
+     
+      <TabBody value = {ed[0].inst}/>
+      <TabBody value = {ed[0].year}/>
       <TabBody value = {ed[0].marks}/>
   
    </tr>
    <tr>
    
-   <TabBody value = {ed[1].edu} />
+    <TabBody value = {ed[1].edu} />
+    <TabBody value = {ed[1].inst}/>
+    <TabBody value = {ed[1].year}/>
     <TabBody value = {ed[1].marks}/>
 
- </tr>
- <tr>
+    </tr>
+    <tr>
    
    <TabBody value = {ed[2].edu} />
+   
+    <TabBody value = {ed[2].inst}/>
+    <TabBody value = {ed[2].year}/>
     <TabBody value = {ed[2].marks}/>
 
- </tr>
-    </tbody>
-  
+    </tr> 
+    </tbody>  
     </table>
+    <br></br>
   </div>
+
   );
   
   ReactDOM.render(
 <App />,
 document.getElementById('root')
 );
-ReactDOM.render(
-<Education />,
-document.getElementById('root1')
+/*
+For Learning
+let Tab2 = React.createElement('table', {id:'Tab2'}, {children:['thead','tbody','tfooter']});
+ReactDOM.render(Tab2,
+document.getElementById('root3')
 );
-React.createElement('table', {id:'Tab2'}, 'List one');
-ReactDOM.render(
-<Tab2 />,
-document.getElementById('root2')
-);
+*/
 </script>
    
 </body>
