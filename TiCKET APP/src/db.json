@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "desc": "JSON SERVER",
+      "status": "open",
+      "id": 1,
+      "priority": 1
+    },
+    {
+      "desc": "REACT",
+      "status": "facebook",
+      "id": 2,
+      "priority": 1
+    },
+    {
+      "desc": "BOOTSTRAP",
+      "status": "css master",
+      "id": 3,
+      "priority": 1
+    },
+    {
+      "desc": "MEDIUM",
+      "status": "medium",
+      "id": 4,
+      "priority": 1
+    },
+    {
+      "id": "6",
+      "desc": "awewf",
+      "status": "AF",
+      "priority": "5"
+    },
+    {
+      "id": "5",
+      "desc": "SWERVER",
+      "status": "ASD",
+      "priority": "1"
+    }
+  ]
+}
