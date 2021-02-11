@@ -37,12 +37,16 @@ db.film.find({year:{$gt:2005}});
 Find the movies released in the years between 2000 and 2010
 db.film.find({year:{$gt:2000 ,$lt:2010}});
 
-Find the movies not released in the years between 2000 and 2010db.film.find({year:{$lt:2000 ,$gt:2010}});
+Find the movies not released in the years between 2000 and 2010
+db.film.find({year:{$not:{$gt:2000, $lt :2010}}});
 
 Find the first 5 Pixar movies and their release year
  db.film.find({},{title:1,year:1}).sort({year:1}).limit(5)
 
-.sort({title:1});
+
+_______________________
+.sort({title:1}); COmment,not query
+__________________________
 
 Find all the Toy Story movies
 db.film.find({title:/Toy Story/});
