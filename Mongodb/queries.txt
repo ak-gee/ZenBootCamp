@@ -1,0 +1,68 @@
+Find all the information about each film
+db.film.find().pretty();
+
+Find the title of each film
+ db.film.find({},{title:1});
+{ "_id" : ObjectId("6024c0bb8dc528596c37b5b3"), "title" : "Toy Story" }
+{ "_id" : ObjectId("6024c0bb8dc528596c37b5b4"), "title" : "Finding Nemo" }
+{ "_id" : ObjectId("6024c0bb8dc528596c37b5b5"), "title" : "Brave" }
+{ "_id" : ObjectId("6024c0bb8dc528596c37b5b6"), "title" : "Monsters University" }
+{ "_id" : ObjectId("6024c0bb8dc528596c37b5b7"), "title" : "WALL-E" }
+{ "_id" : ObjectId("6024c0bb8dc528596c37b5b8"), "title" : "Up" }
+{ "_id" : ObjectId("6024c0bb8dc528596c37b5b9"), "title" : "Cars 2" }
+{ "_id" : ObjectId("6024c0bb8dc528596c37b5ba"), "title" : "The Incredibles" }
+{ "_id" : ObjectId("6024c0bb8dc528596c37b5bb"), "title" : "Toy Story 2" }
+{ "_id" : ObjectId("6024c0bb8dc528596c37b5bc"), "title" : "Monsters, Inc." }
+{ "_id" : ObjectId("6024c0bb8dc528596c37b5bd"), "title" : "Toy Story 3" }
+{ "_id" : ObjectId("6024c0bb8dc528596c37b5be"), "title" : "Ratatouille" }
+{ "_id" : ObjectId("6024c0bb8dc528596c37b5bf"), "title" : "A Bug's Life" }
+{ "_id" : ObjectId("6024c0bb8dc528596c37b5c0"), "title" : "Cars" }
+
+Find the director of each film
+db.film.find({},{director:1});
+
+
+Find the title and director of each film
+db.film.find({},{title:1,director:1});
+
+Find the title and year of each film
+db.film.find({},{title:1,year:1});
+
+Find the movie with a row id of 6
+db.film.find({id:6});
+
+
+db.film.find({year:{$gt:2005}});
+
+Find the movies released in the years between 2000 and 2010
+db.film.find({year:{$gt:2000 ,$lt:2010}});
+
+Find the movies not released in the years between 2000 and 2010db.film.find({year:{$lt:2000 ,$gt:2010}});
+
+Find the first 5 Pixar movies and their release year
+ db.film.find({},{title:1,year:1}).sort({year:1}).limit(5)
+
+.sort({title:1});
+
+Find all the Toy Story movies
+db.film.find({title:/Toy Story/});
+
+Find all the movies directed by John Lasseter
+db.film.find({director:"John Lasseter"});
+
+Find all the movies (and director) not directed by John Lasseter
+db.film.find({director:{$ne :"John Lasseter"}});
+
+Find all the WALL-* movies
+db.film.find({title:/WALL-/});
+
+List the last four Pixar movies released (ordered from most recent to least)
+db.film.find({}).sort({year:-1}).limit(5);
+
+List the first five Pixar movies sorted alphabetically
+db.film.find({}).sort({year:1}).limit(5).sort({title:1});
+
+List the next five Pixar movies sorted alphabetically
+ db.film.find({}).sort({year:1}).limit(5).skip(5);
+______________________________________________________________________--
+> db.film.find({},{title:1,year:1,_id:0}).sort({title:1,year:1});
