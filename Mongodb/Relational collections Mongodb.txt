@@ -1,0 +1,33 @@
+Querying related collections	
+	1. find all users
+	db.users.find()
+	
+2. find all posts
+db.posts.find()	
+
+3. find all posts that was authored by "GoodGuyGreg"
+ db.posts.find({username:"GoodGuyGreg"});	
+ 
+4. find all posts that was authored by "ScumbagSteve"
+db.posts.find({username:"ScumbagSteve"});
+
+5. find all comments
+db.comments.find()	
+
+	6. find all comments that was authored by "GoodGuyGreg"
+	db.comments.find({username:"GoodGuyGreg"});
+	
+7. find all comments that was authored by "ScumbagSteve"
+db.comments.find({username:"ScumbagSteve"});	
+
+8. find all comments belonging to the post "Reports a bug in your code"
+"db.comments.aggregate([
+   {
+      $lookup: {
+         from: ""posts"",
+        pipeline: [
+              { $match: { title:""Reports a bug in your code"" } },
+],
+         as: ""Posts""
+      }
+   }"	
